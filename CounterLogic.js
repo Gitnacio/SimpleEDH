@@ -3,7 +3,7 @@ const add_button = document.getElementById('add_life');
 const subs_Xbutton = document.getElementById('subs_Xlife');
 const add_Xbutton = document.getElementById('add_Xlife');
 const life_txt = document.getElementById('life_txt');
-const restart_btn = document.getElementById('restart_btn');
+const reset_btn = document.getElementById('reset_btn');
 
 const cmd_1_btn = document.getElementById('cmd_1_btn');
 const cmd_2_btn = document.getElementById('cmd_2_btn');
@@ -173,7 +173,7 @@ cmd_3_mns_btn.addEventListener('click', function(){
     }
 })
 
-restart_btn.addEventListener('click', function(){
+reset_btn.addEventListener('click', function(){
     life_count = 40;
     cmd_1_count = 0;
     cmd_2_count = 0;
