@@ -96,6 +96,7 @@ h2{
 .modal select{
     background-color: var(--accent_color);
     color: var(--text_color);
+    padding:5px;
 }
 
 /*Commander buttons*/
