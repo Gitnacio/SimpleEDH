@@ -9,21 +9,32 @@
     </head>
 
     <body>
-        <button id="btn-config" class="btn-config">⚙️</button>
-        <dialog id="menu-config" class="modal">
+        <button id="btn_sett" class="btn_sett">⚙️</button>
+        <dialog id="menu_sett" class="modal">
             <h2>Settings</h2>
 
             <div class="menu_option">
-                <label for="color-fondo">Color de Fondo:</label>
-                <input type="color" id="color-fondo" value="#3f3939">
+                <label for="theme_lbl">Theme </label>
+                <select id="theme_select">
+                    <option value="default">Default</option>
+                    <option value="white">White</option>
+                    <option value="blue">Blue</option>
+                    <option value="black">Black</option>
+                    <option value="red">Red</option>
+                    <option value="green">Green</option>
+                </select>
             </div>
 
             <div class="menu_option">
-                <label for="num-oponentes">Oponentes en la mesa:</label>
-                <input type="number" id="num-oponentes" min="1" max="3" value="3">
+                <label for="opponents_nmb">Opponents </label>
+                <select id="opponents_select">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
             </div>
 
-            <button id="btn-close-config" class="btn-close">Cerrar y Jugar</button>
+            <button id="btn_close_sett" class="back_btn">Close</button>
         </dialog>
         
         <div class="cmd_cont">
@@ -53,7 +64,7 @@
             <button id="subs_Xlife" class="Xlife_btn">-10</button>
         </div>
 
-        <button id="reset_btn" class="reset_btn">Reset</button>
+        <button id="reset_btn" class="back_btn">Reset</button>
     
     <script src="CounterLogic.js"></script>
 

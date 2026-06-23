@@ -1,3 +1,45 @@
+:root{
+    --accent_color: antiquewhite;
+    --theme_color: rgb(63, 57, 57);
+    --text_color: rgb(63, 57, 57);
+    --transparent: rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="white"]{
+    --accent_color: rgb(63, 58, 58);
+    --theme_color: rgb(218, 206, 206);
+    --text_color: rgb(218, 206, 206);
+    --transparent: rgba(146, 137, 137, 0.5);
+}
+
+[data-theme="blue"]{
+    --accent_color: rgb(102, 141, 190);
+    --theme_color: rgb(19, 61, 138);
+    --text_color: rgb(27, 29, 51);
+    --transparent: rgba(24, 24, 61, 0.5);
+}
+
+[data-theme="black"]{
+    --accent_color: rgb(240, 237, 231);
+    --theme_color: rgb(22, 22, 21);
+    --text_color: rgb(37, 36, 36);
+    --transparent: rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="red"]{
+    --accent_color: rgb(160, 103, 96);
+    --theme_color: rgb(148, 23, 23);
+    --text_color: rgb(39, 7, 7);
+    --transparent: rgba(66, 19, 19, 0.5);
+}
+
+[data-theme="green"]{
+    --accent_color: rgb(147, 236, 129);
+    --theme_color: rgb(22, 109, 37);
+    --text_color: rgb(11, 49, 11);
+    --transparent: rgba(10, 24, 8, 0.5);
+}
+
 body{
     display: flex;
     flex-direction: column;
@@ -7,8 +49,8 @@ body{
     height: 100vh;
     margin: 0;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color:antiquewhite;
-    background-color: rgb(63, 57, 57);
+    color: var(--accent_color);
+    background-color: var(--theme_color);
 }
 
 h2{
@@ -16,26 +58,109 @@ h2{
     margin: 0;
 }
 
-.reset_btn{
-    font-size: medium;
-    color:rgb(63, 57, 57);
-    background-color: antiquewhite;
+/*Settings*/
+.btn_sett{
+    position:absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 36px;
     border: none;
-    border-radius: 8px;
-    box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.5);
+    background: none;
     cursor: pointer;
 }
 
-.reset_btn:active{
+.btn_sett:active{
     transform:translateY(2px);
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+    border: none;
+    background: none;
+}
+
+.modal[open]{
+    display:flex;
+    flex-direction: column;;
+    background-color: var(--transparent);
+    color:  var(--accent_color);
+    border: none;
+    border-radius: 12px;
+    padding: 20px;
+    width: 85%;
+    max-width: 400px;
+    gap: 20px;
+}
+
+.modal[open]::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+}
+
+.modal select{
+    background-color: var(--accent_color);
+    color: var(--text_color);
+}
+
+/*Commander buttons*/
+.cmd_cont{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.single_cmd_cont{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cmd_btn{
+    font-size: 32px;
+    color: var(--accent_color);
+    width: 100px;
+    height: 96px;
+    border:rgb(0, 0, 0);
+    background:var(--transparent);
+    border-radius: 8px;
+    gap: 20px
+}
+
+.cmd_btn:active{
+    background:rgb(0, 0, 0);
+}
+
+.cmd_mns_btn{
+    font-size: 18px;
+    color: var(--accent_color);
+    width: 100px;
+    height: 42px;
+    border:rgb(0, 0, 0);
+    background:var(--transparent);
+    border-radius: 8px;
+    gap: 20px
+}
+
+.cmd_mns_btn:active{
+    background:rgb(0, 0, 0);
+}
+
+/*Life modifier buttons*/
+
+.Btns_Container{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+}
+
+#life_txt{
+    font-size: 100px;
+    margin-bottom: 25px;
 }
 
 .life_btn{
     font-size: 32px;
     padding: 10px 32px;
-    color:rgb(63, 57, 57);
-    background-color: antiquewhite;
+    color: var(--text_color);
+    background-color:  var(--accent_color);
     border: none;
     border-radius: 8px;
     box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.5);
@@ -50,8 +175,8 @@ h2{
 .Xlife_btn{
     font-size: 16px;
     padding: 5px 12px;
-    color:rgb(63, 57, 57);
-    background-color: antiquewhite;
+    color: var(--text_color);
+    background-color:  var(--accent_color);
     border: none;
     border-radius: 8px;
     box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.5);
@@ -63,76 +188,18 @@ h2{
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.single_cmd_cont{
-    align-items: center;
-}
-
-.cmd_btn{
-    font-size: 32px;
-    color:aliceblue;
-    width: 100px;
-    height: 96px;
-    border:rgb(0, 0, 0);
-    background:rgba(0, 0, 0, 0.3);
-    border-radius: 8px;
-    gap: 20px
-}
-
-.cmd_btn:active{
-    background:rgb(0, 0, 0);
-}
-
-.cmd_mns_btn{
-    font-size: 18px;
-    color:aliceblue;
-    width: 100px;
-    height: 42px;
-    border:rgb(0, 0, 0);
-    background:rgba(0, 0, 0, 0.3);
-    border-radius: 8px;
-    gap: 20px
-}
-
-.cmd_mns_btn:active{
-    background:rgb(0, 0, 0);
-}
-
-.cmd_cont{
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-}
-
-.single_cmd_cont{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.btn-config{
-    position:absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 36px;
+.back_btn{
+    font-size: medium;
+    color: var(--text_color);
+    background-color:  var(--accent_color);
     border: none;
-    background: none;
+    border-radius: 8px;
+    box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.5);
     cursor: pointer;
 }
 
-.btn-config:active{
+.back_btn:active{
     transform:translateY(2px);
-    border: none;
-    background: none;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.Btns_Container{
-    display:flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 20px;
-}
-
-#life_txt{
-    font-size: 100px;
-    margin-bottom: 25px;
-}
