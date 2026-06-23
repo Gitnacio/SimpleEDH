@@ -205,4 +205,5 @@ btnCloseSett.addEventListener('click', function(){
 
 themeSelect.addEventListener('change', function(){
     document.body.setAttribute('data-theme', themeSelect.value);
+    menuSett.close();
 });
